@@ -13,6 +13,8 @@ from scipy.spatial import Delaunay
 def brute_force_KNN(points, k):
     """ Select the k nearest neighbours """
     neighborhoods = []
+    total_iterations = len(points)
+    counter = 1
     for query in points :
         dist = np.linalg.norm(query-points, axis=1)
         sample_idx = []
@@ -20,6 +22,8 @@ def brute_force_KNN(points, k):
             sample_idx.append(np.argmin(dist))
             dist[sample_idx] = np.inf
         neighborhoods.append(sample_idx)
+        print("neighborhoods computed: ", counter, "/", total_iterations)
+        counter += 1
     return neighborhoods
 
 
