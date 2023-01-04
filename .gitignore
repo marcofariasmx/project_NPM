@@ -1,0 +1,5 @@
+data/building-test.ply
+data/building-bin-2-halfsize.ply
+data/building-test-bin.ply
+__pycache__
+data\results
